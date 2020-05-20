@@ -22,7 +22,7 @@ function Cadastro() {
         try {
             const response = await api.post('usuario', dados);
              const id = response.data.id;
-             alert("Seu id de acesso:" + id);
+             alert("Seu identificador de usuario é:" + id);
             // history.push('/');
         } catch (error) {
             alert("Erro no Cadastro");            
