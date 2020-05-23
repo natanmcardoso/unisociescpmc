@@ -24,8 +24,16 @@ routes.post('/usuario/', async (request, response) => {
 routes.get('/usuario/', async (request, response) => {
 
     const usuarios = await connection('usuario').select('*');
-
+    console.log(usuarios.length);
     return response.json(usuarios);
+});
+
+routes.delete('/usuario/', async(request, response) => {
+    const {id} = request.param;
+
+    await connection('usuario').where('id', id).delete();
+
+    return response.status(204).send();
 });
 
 
