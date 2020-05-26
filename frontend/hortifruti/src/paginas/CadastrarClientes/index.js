@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import api from '../services/api';
+import './style.css';
 
 function CadastrarClientes() {
 
@@ -13,7 +14,7 @@ function CadastrarClientes() {
 
     const history = useHistory();
 
-    async function handleCadastro(e) {
+    async function handleCadastrarClientes(e) {
         e.preventDefault();
 
         const dados = {
@@ -37,13 +38,13 @@ function CadastrarClientes() {
 
     return (
         <div>
-            <div>
+            <div className="login-container">
                 <h1>Cadastrar Cliente</h1>
                 <Link to="/login">
                     Ja tenho cadastro
                 </Link>
 
-                <form onSubmit={handleCadastro}>
+                <form className="form" onSubmit={handleCadastrarClientes}>
 
                     <input 
                         placeholder="Seu Nome"

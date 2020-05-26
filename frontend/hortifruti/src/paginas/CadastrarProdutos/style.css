@@ -4,8 +4,8 @@ body {
 
 .login-container {
     background-color: #FFFFFF;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 700px;
     margin: 7em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -17,7 +17,7 @@ body {
 .login-container .form h1 {
     padding-top: 40px;
     color: rgb(72, 53, 246);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'JetBrans', sans-serif;
     font-weight: bold;
     font-size: 23px;
 }
@@ -38,7 +38,7 @@ body {
     margin-bottom: 50px;
     text-align: center;
     margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'JetBrans', sans-serif;
 }
 
 .login-container .form input:focus, .input:focus {
@@ -55,7 +55,7 @@ body {
     padding-right: 40px;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'JetBrans', sans-serif;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }

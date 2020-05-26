@@ -6,6 +6,16 @@ function Usuario() {
 
     const [usuarios, setUsuarios] = useState([]);
 
+    async function handleDeleteUsuario(id) {
+        try {
+            await api.delete(`usuario/${id}`, {});
+            setUsuarios(usuarios.filter(usuario => usuario.id !== id));
+        } catch(error){
+            alert('Erro ao deletar usuário');
+        }
+
+    }
+
     useEffect(() => {
         api.get('usuario',{}).then(response => {
             setUsuarios(response.data);
@@ -23,6 +33,10 @@ function Usuario() {
                             <p>Usuario: {usuario.id}</p>
                             <p>Nome: {usuario.nome}</p>
                             <p>Telefone: {usuario.telefone}</p>
+                            <p>Email: {usuario.email}</p>
+                            <button type="button" onClick={() => handleDeleteUsuario(usuario.id)}>
+                                Excluir
+                            </button>
                         </li>
                     ))
                     }

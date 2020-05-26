@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import api from '../services/api';
+import './style.css';
 
 function CadastrarProdutos() {
 
@@ -11,7 +12,7 @@ function CadastrarProdutos() {
 
     const history = useHistory();
 
-    async function handleCadastro(e) {
+    async function handleCadastrarProdutos(e) {
         e.preventDefault();
 
         const dados = {
@@ -23,7 +24,7 @@ function CadastrarProdutos() {
         };
 
         try {
-            const response = await api.post('usuario', dados);
+            const response = await api.post('frutas', dados);
              const id = response.data.id;
              alert("Seu identificador do produto é:" + id);
             // history.push('/');
@@ -33,11 +34,11 @@ function CadastrarProdutos() {
     }
 
     return (
-        <div>
+        <div className="login-container">
             <div>
                 <h1>Cadastrar Produtos</h1>
             
-                <form onSubmit={handleCadastro}>
+                <form className="form" onSubmit={handleCadastrarProdutos}>
                                   
                     <input 
                         placeholder="Nome do Produto"
@@ -60,11 +61,15 @@ function CadastrarProdutos() {
                         onChange={e => setPreco(e.target.value)}/> 
 
                     <button className="button" type="submit">Cadastrar</button>
-                </form>
 
-                <Link to="/">
+
+                    <Link to="/">
                     Produto Já cadastrado
                 </Link>
+                
+                </form>
+
+                
 
             </div>
         </div>
