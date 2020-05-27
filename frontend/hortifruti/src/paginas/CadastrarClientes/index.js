@@ -27,7 +27,7 @@ function CadastrarClientes() {
         };
 
         try {
-            const response = await api.post('usuario', dados);
+            const response = await api.post('clientes', dados);
              const id = response.data.id;
              alert("Seu identificador de usuário é:" + id);
             // history.push('/');

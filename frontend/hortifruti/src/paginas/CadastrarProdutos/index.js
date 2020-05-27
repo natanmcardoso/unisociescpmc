@@ -24,7 +24,7 @@ function CadastrarProdutos() {
         };
 
         try {
-            const response = await api.post('frutas', dados);
+            const response = await api.post('produtos', dados);
              const id = response.data.id;
              alert("Seu identificador do produto é:" + id);
             // history.push('/');
